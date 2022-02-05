@@ -1,0 +1,15 @@
+#results
+  #roll
+    button#button Roll the dice
+    .dice
+    .clearfix
+  #sorted.hidden
+    - [['1', '2', '3'], ['4', '5', '6']].each do |set|
+      .column
+        .fifth Fifth Die
+        .options Options
+        - set.each do |number|
+          div id="die#{number}"
+            .fifth
+              .die class="die#{number}"
+            .options

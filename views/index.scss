@@ -1,0 +1,120 @@
+body {
+  background-color: #999999;
+  color: #222222;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#button {
+  background-color: #337c36; /* Green */
+  color: white;
+  border: 2px solid #337c36;
+  border-radius: 10px;
+  position: relative;
+  bottom: 27px;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: #48a04b;
+  color: rgb(255, 255, 255);
+}
+
+#container {
+  width: 100%;
+}
+
+.clearfix {
+  float: none;
+  clear: both;
+}
+
+#roll {
+  display: block;
+  text-align: center;
+  height: 64px;
+  vertical-align: top;
+  margin-bottom: 50px;
+
+  .dice {
+    margin-left: 15px;
+    display: inline-block;
+    min-height: 64px;
+    margin: auto;
+
+    .die:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+}
+
+
+#sorted {
+  width: 90%;
+  margin: auto;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.fifth {
+  padding-right: 50px;
+  font-size: xx-large;
+}
+
+.fifth, .options {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.options {
+  font-size: xx-large;
+  margin-bottom: 30px;
+  min-height: 64px;
+}
+
+.option {
+  height: 64px;
+  margin-bottom: 25px;
+}
+
+.option1, .option2, .value {
+  display: inline-block;
+  height: 64px;
+  vertical-align: middle;
+
+  .die:not(:first-child) {
+      margin-left: 15px;
+  }
+}
+
+.option1 {
+  padding-right: 50px;
+}
+
+.die {
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+}
+
+$numbers: 0, 1, 2, 3, 4, 5;
+
+@each $number in $numbers {
+  .die#{$number + 1} {
+    background-image: url(diceWhite.png);
+    background-position: -#{$number * 64}px;
+  }
+
+}
